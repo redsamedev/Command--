@@ -1,26 +1,27 @@
 def appmain():
     def CommandsMain():
-        mylistchelp = ["0.Exit", "1.Calculator", "2.Games", "3.ComingSoon"]
+        mylistchelp = ["--exit -app: This Command Let's You Exit The APP", "--calculator: This Command Opens You The Calculator", "--games -open: This Command Opens You The Games Launcher"]
         print("Welcome To CommandPlus APP")
-        print("Type help to see all commands available")
+        print("Type help To see All Commands Available")
         z = 0
         while z < 99999999999999999999999999999:
             z += 0.00000000000000001
-            Nm = str(input(">>> "))
-            if Nm == "1":
+            Nm = str(input("TypeCommand>> "))
+            if Nm == "--calculator":
                 Calculatoroprning()
                 break
             elif Nm == "help":
                 for x in mylistchelp:
                     print(x)
-            elif Nm == "0":
+            elif Nm == "--exit -app":
                 appmain(exit())
-            elif Nm == "2":
+            elif Nm == "--games -open":
                 SCW()
             else:
                 print("This Command Is not Existed")
     def Calculatoroprning():
         print("Opening Calculator")
+        print("After You see The Answer Type help To see All Commands Available")
         x = 0
         while x < 999999999999999999999999999999:
             x += 0.00000000000000001
@@ -42,44 +43,52 @@ def appmain():
                 print("Invalid Operator")
                 print(">>> " + Symbols)
                 print("There is an Error in " + Symbols)
-            y = input(">>> ")
-            listhelp = ["0.Exit"]
+            y = input("Type Command>> ")
+            listhelp = ["--back: this command let's you go to the Func Before"]
             if y == "help":
                 print(listhelp)
-            elif y == "0":
+            elif y == "--back":
                 CommandsMain()
                 break
     def SCW():
         print("Open GamesLauncher")
+        print("Type help To see All Commands Available")
         hh = 0
-        listhelp = ["1.GuessGame", "2.ComingSoon", "3.ComingSoon"]
+        listgames = ["1.GuessGame", "2.ComingSoon", "3.ComingSoon"]
+        listhelp = ["--back: this command let's you go to the Func Before", "--games: This Command Show you All Games Available", "--open game (game num): This Command Let's you Open The Games Available"]
         while hh < 99999999999999999999999999999999999:
             hh += 0.000000000000001
-            y = input(">>> ")
-            if y == "help":
-                for i in listhelp:
+            y = input("Type Command>> ")
+            if y == "--games":
+                for i in listgames:
                     print(i)
 
-            elif y == "exit":
+            elif y == "--back":
                 CommandsMain()
                 break
-            elif y == "1":
+            elif y == "--open game (1)":
                 GuessGame()
                 break
+            elif y == "help":
+                for i in listhelp:
+                    print(i)
+            else:
+                print("This Command Not Available")
     def GuessGame():
         print("Opening GuessGame")
+        print("Type help To see All Commands Available")
         x = 0
         while x < 999999:
             x += 0.0000000001
-            lishelp = ["0.Exit", "1.MainApp"]
+            lishelp = ["--back: this command let's you go to the Func Before", "--ma: --ma is a command use it to return the main of app", "start -- 'Name Of the Game'"]
             yh = input(">>> ")
             if yh == "help":
                 for c in lishelp:
                     print(c)
-            elif yh == "0":
+            elif yh == "--back":
                 SCW()
                 break
-            elif yh == "1":
+            elif yh == "--ma":
                 CommandsMain()
                 break
     CommandsMain()
